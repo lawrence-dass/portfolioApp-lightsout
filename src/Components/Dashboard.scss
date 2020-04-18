@@ -1,0 +1,65 @@
+
+
+.dashboard {
+  &__title {
+    color: #53afa7;
+    font-size: 4rem;
+  }
+
+  &__game-info {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #acacac ;
+    padding: .5rem 1.5rem 1.5rem;
+    border-radius: 5px;
+
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__game-title {
+    color: #323232;
+    font-size: 2rem;
+  }
+
+  &__setting {
+
+    background-color: #acacac;
+    width: 40%;
+    margin: 1rem auto;
+    padding: .5rem 2rem 2rem;
+    border-radius: 5px;
+    font-size: 1.25rem;
+
+    &-title {
+      font-size: 1.5rem;
+    }
+    
+    &-form div {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: 1rem;
+
+      & b {
+        padding-right: .5rem;
+      }
+
+      & label {
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+    }
+
+    & button {
+      padding: 1rem 4rem;
+      border-radius: 5px;
+      background-color: #53afa7;
+      font-size: 1.25rem;
+      color: rgb(44, 44, 44);
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

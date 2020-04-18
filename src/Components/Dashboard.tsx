@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 
+import './Dashboard.scss';
+import TestComponent from './TestComponent'
 type myState = {
 
 }
@@ -34,25 +36,25 @@ class Dashboard extends Component <myProps ,myState > {
 
   render() {
     return (
-      <div>
-        <h1> Lights Out </h1>
-        <div>
-          <h2> Game Info </h2>
+      <div className="dashboard">
+        <h1 className="dashboard__title"> Lights Out </h1>
+        <div className="dashboard__game-info">
+          <TestComponent></TestComponent>
+          <h2 className="dashboard__game-title"> Game Information </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt voluptates repellendus harum quisquam eius reiciendis, accusamus, soluta consectetur alias eligendi cum quaerat ipsum? Dolor esse dicta vitae sint? Itaque, vero!
+            <strong> Objective: </strong> To turn all the lights out on the board, but each time you press a lit or unlit button, it not only changes that block, but also the adjacent blocks! You must
+            try to turn the lights out in the minimum number of moves!
             </p>
-          <p>
-            Consectetur adipisicing elit. Incidunt voluptates repellendus harum quisquam eius reiciendis, accusamus, soluta consectetur alias eligendi cum quaerat ipsum? Dolor esse dicta vitae sint? Itaque, vero!
-            </p>
+          <p> Now let’s turn the Lights Out! </p>
         </div>
-        <div>
+        <div className="dashboard__setting">
 
-          <h2> Settings </h2>
+          <h2 className="dashboard__setting-title"> Settings </h2>
 
 
-          <div>
+          <div className="dashboard__setting-form">
             <div>
-              <p> Number of Blocks: </p>
+              <b> Number of Blocks: </b>
               <input name="noOfBlocks" value="5" id="5" onChange={(e) => { this.handleBlockSelect(e) }} type="radio" />
               <label htmlFor="5"> 5 X 5  </label>
               <input name="noOfBlocks" value="10" id="10" onChange={(e) => { this.handleBlockSelect(e) }} type="radio" defaultChecked />
@@ -61,7 +63,7 @@ class Dashboard extends Component <myProps ,myState > {
               <label htmlFor="20"> 20 X 20  </label>
             </div>
             <div>
-              <p> DifficultyLevel: </p>
+              <b> DifficultyLevel: </b>
               <input name="difficultyLevel" value=".25" id="easy" onChange={(e) => { this.handleBlockSelect(e) }} type="radio" />
               <label htmlFor="easy"> Easy </label>
               <input name="difficultyLevel" value=".50" id="medium" onChange={(e) => { this.handleBlockSelect(e) }} type="radio" defaultChecked />
