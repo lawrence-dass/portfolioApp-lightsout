@@ -31,7 +31,6 @@ const reducer = (state, action) => {
   };
 
   if (action.type === START_GAME) {
-    console.log('action case met', { ...defaultState, settings: action.payload });
     const board = createBoard(
       action.payload.nrows,
       action.payload.ncols,
@@ -45,7 +44,6 @@ const reducer = (state, action) => {
     return { ...state, board, hasWon, moves: state.moves + 1 };
   }
 
-  console.log('state in context', state);
   return state;
 };
 const localStorageAppState = JSON.parse(localStorage.getItem('appState'));
@@ -78,7 +76,6 @@ export const AppProvider = ({ children }) => {
   localStorage.setItem('appState', JSON.stringify(appState));
 
   const flipCellsAround = (coord) => {
-    console.log('flipCellsAround ttt', coord);
     let { ncols, nrows } = appState.settings;
     let board = appState.board;
     let [y, x] = coord.split('-').map(Number);
