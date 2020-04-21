@@ -42,16 +42,15 @@ const Board = () => {
           <span className="neon-blue">WIN!</span>
         </div>
       ) : (
-        <div>
-          <div className="Board-title">
-            <div className="neon-orange">Lights</div>
-            <div className="neon-blue">Out</div>
+          <div>
+            <div className="Board-title">
+              <div className="neon-orange">Lights</div>
+              <div className="neon-blue">Out</div>
+            </div>
+            {makeTable()}
+            <h2 className="board__footer"> Moves: {appState.moves} </h2>
           </div>
-          {makeTable()}
-
-          <h2 className="board__footer"> Moves: {appState.moves} </h2>
-        </div>
-      )}
+        )}
     </div>
   );
 };

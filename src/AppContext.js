@@ -89,10 +89,10 @@ export const AppProvider = ({ children }) => {
         board[y][x] = !board[y][x];
       }
     }
-    flipCell(y, x); 
-    flipCell(y, x - 1); 
-    flipCell(y, x + 1); 
-    flipCell(y - 1, x); 
+    flipCell(y, x);
+    flipCell(y, x - 1);
+    flipCell(y, x + 1);
+    flipCell(y - 1, x);
     flipCell(y + 1, x);
 
 
