@@ -1,0 +1,67 @@
+.dashboard {
+  color: #dfdfdf;
+
+  &__title {
+    color: #53afa7;
+    font-size: 4rem;
+    font-family: 'Bangers', Geneva, Verdana, sans-serif;
+    letter-spacing: 4px;
+  }
+
+  &__game-info {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #262c42;
+    padding: 0.5rem 1.5rem 1.5rem;
+    border-radius: 5px;
+
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__game-title {
+    color: #f5f5f5;
+    font-size: 2rem;
+  }
+
+  &__setting {
+    background-color: #262c42;
+    width: 40%;
+    margin: 1rem auto;
+    padding: 0.5rem 2rem 2rem;
+    border-radius: 5px;
+    font-size: 1.25rem;
+
+    &-title {
+      font-size: 1.75rem;
+    }
+
+    &-form div {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: 1rem;
+
+      & b {
+        padding-right: 0.5rem;
+      }
+
+      & label {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+    }
+
+    & button {
+      padding: 1rem 4rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+      background-color: #53afa7;
+      font-size: 1.25rem;
+      color: rgb(44, 44, 44);
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
