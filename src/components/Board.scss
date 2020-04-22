@@ -54,6 +54,13 @@ table tr:last-child td:last-child {
   font-size: 200px;
 }
 
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .board__footer {
   position: absolute;
   bottom: 1rem;

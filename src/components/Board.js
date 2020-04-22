@@ -3,11 +3,15 @@ import Cell from './Cell';
 import './Board.scss';
 import { AppContext } from '../AppContext';
 
-const Board = () => {
+const Board = (props) => {
   const { appState, flipCellsAround } = useContext(AppContext);
 
   function handleBlockClick(coord) {
     flipCellsAround(coord);
+  }
+
+  function handleRedirect() {
+    props.history.push('/');
   }
 
   const makeTable = () => {
@@ -43,7 +47,7 @@ const Board = () => {
         </div>
       ) : (
           <div>
-            <div className="Board-title">
+            <div className="Board-title" onClick={handleRedirect}>
               <div className="neon-orange">Lights</div>
               <div className="neon-blue">Out</div>
             </div>

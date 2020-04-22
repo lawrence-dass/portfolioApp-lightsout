@@ -13,10 +13,18 @@ const createBoard = (nrows, ncols, chanceLightStartsOn) => {
   return board;
 };
 
+const tempAppState = {
+  board: [[false,false,false,false,false],[false,false,false,false,false],[false,false,false,true,false],[false,false,true,true,true],[false,false,false,true,false]],
+  hasWon: false,
+  moves: 0,
+  settings: {nrows: "5", ncols: "5", difficultyLevel: ".25"}
+}
+
 export const AppContext = createContext();
 
 const START_GAME = 'START_GAME';
 const BLOCK_CLICK = 'BLOCK_CLICK';
+const START_DEMO_GAME = 'START_DEMO_GAME';
 
 const reducer = (state, action) => {
   const defaultState = {
@@ -37,6 +45,10 @@ const reducer = (state, action) => {
       action.payload.difficultyLevel
     );
     return { ...defaultState, settings: action.payload, board };
+  }
+
+  if (action.type === START_DEMO_GAME) {
+    return tempAppState;
   }
 
   if (action.type === BLOCK_CLICK) {
@@ -73,7 +85,12 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  localStorage.setItem('appState', JSON.stringify(appState));
+  const startDemoGame = () => {
+    dispatch({
+      type: START_DEMO_GAME,
+    });
+  };
+
 
   const flipCellsAround = (coord) => {
     let { ncols, nrows } = appState.settings;
@@ -102,7 +119,9 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  const value = { appState, startGame, flipCellsAround };
+  localStorage.setItem('appState', JSON.stringify(appState));
+
+  const value = { appState, startGame, startDemoGame, flipCellsAround };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

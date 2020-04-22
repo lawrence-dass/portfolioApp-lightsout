@@ -7,7 +7,7 @@ const Dashboard = (props) => {
   const [blocks, setBlocks] = useState(10);
   const [difficulty, setDifficulty] = useState(0.5);
 
-  const { startGame } = useContext(AppContext);
+  const { startGame, startDemoGame } = useContext(AppContext);
 
   function handleBlockSelect(e) {
     setBlocks(e.target.value);
@@ -20,6 +20,12 @@ const Dashboard = (props) => {
   function handleFormSubmit(e) {
     e.preventDefault();
     startGame(blocks, difficulty);
+    props.history.push('/board');
+  }
+
+  // Demo settings
+  function handleDemoClick() {
+    startDemoGame();
     props.history.push('/board');
   }
 
@@ -99,6 +105,7 @@ const Dashboard = (props) => {
           <button type="submit" onClick={handleFormSubmit}>Start</button>
         </div>
       </div>
+      <h6 onClick={handleDemoClick}> Demo Win </h6>
     </div>
   );
 };
