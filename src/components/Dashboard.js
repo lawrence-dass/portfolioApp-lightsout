@@ -102,10 +102,11 @@ const Dashboard = (props) => {
             />
             <label htmlFor="har"> Hard </label>
           </div>
-          <button type="submit" onClick={handleFormSubmit}>Start</button>
+          <button type="submit" onClick={handleFormSubmit}>
+            Start
+          </button>
         </div>
       </div>
-      <h6 onClick={handleDemoClick}> Demo Win </h6>
     </div>
   );
 };
